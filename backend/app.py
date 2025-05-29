@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder='../frontend/templates', static_folder='..
 def index():
     if request.method == 'POST':
         original_url = request.form['original_url']
-        short_url = shorten_url(original_url)
+        short_url = shorten_url(original_url, host=request.host)
         return render_template('index.html', short_url=short_url, original_url=original_url)
     return render_template('index.html', short_url=None)
 
