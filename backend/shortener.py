@@ -2,8 +2,6 @@ from flask import Flask, request, redirect
 import random
 import string
 
-app = Flask(__name__)
-
 url_map = {}  # Dictionary to store short -> original mapping
 
 def shorten_url(original_url):
